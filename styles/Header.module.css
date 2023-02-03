@@ -1,0 +1,46 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1rem;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.image>b{
+    font-size: 20px;
+    font-weight: bold;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.list>li{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.cart{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    z-index: 99;
+}
+.badge{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--themeRed);
+    color: white;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+}

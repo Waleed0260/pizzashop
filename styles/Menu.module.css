@@ -1,0 +1,26 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+.menuheading{
+    display: flex;
+    flex-direction: column;
+}
+.menuheading>b{
+    color: var(--themeRed);
+}
+
+.pizzas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.piimg{
+    width: 350px;
+    height: 250px;
+}
+.pitext{
+    margin-top: -10px;
+}

@@ -1,0 +1,42 @@
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.serviceheading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.serviceheading>span{
+    color: var(--themeRed);
+    font-weight: bold;
+}
+.serviceheading>h2{
+    margin-top: -20px;
+}
+
+.features{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.8rem;
+}
+.feature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imageWrapper{
+    width: 10rem;
+    height: 10rem;
+}
+.feature>p{
+    color: var(--gray);
+    width: 20vw;
+    text-align: center;
+}
