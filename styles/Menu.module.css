@@ -14,13 +14,19 @@
 .pizzas{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .piimg{
     width: 350px;
     height: 250px;
 }
+
 .pitext{
     margin-top: -10px;
+}
+
+.bold{
+    position: relative;
+    top: -20px;
 }

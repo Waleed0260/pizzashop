@@ -7,7 +7,7 @@ import css from "../styles/Home.module.css"
 
 export const getStaticProps = async()=>{
   const res = await fetch("http://localhost:3000/api/hello")
-  const data = await res.json();
+  const data = await res.json([0]);
 
   return {
     props: {

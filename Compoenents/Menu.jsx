@@ -1,7 +1,7 @@
 import React from 'react'
 import css from "../styles/Menu.module.css"
 import Image from 'next/image'
-
+import Link from 'next/link'
 
 
 
@@ -16,13 +16,15 @@ const Menu = ({data}) => {
       <div className={css.pizzas}>
       {data.map((items)=>{
           return (
-          <div className={css.pizza}>
+          <div className={css.pizza} key={items.id}>
+            <Link href={`/pizza/${items.id}`}>
             <div className={css.piimg}>
             <img src={items.image} alt="" style={{width:"100%", height: "100%", borderRadius: "30px"}}/>
             </div>
+            </Link>
             <div className={css.pitext}>
             <h3>{items.name}</h3>
-            <b><span>$</span> {items.price}</b>
+            <b className={css.bold}><span style={{color: "var(--themeRed)"}}>$</span> {items.price}</b>
             </div>
           </div>
       )
@@ -33,3 +35,4 @@ const Menu = ({data}) => {
 }
 
 export default Menu
+
