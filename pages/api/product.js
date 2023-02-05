@@ -1,7 +1,6 @@
 
-export default function handler(req, res) {
-    res.status(200).json([
-      {
+export const products = [
+    {
         id: "1",
         name: "Chicken pizza",
         image:
@@ -54,6 +53,17 @@ export default function handler(req, res) {
         price: "15",
         desc: "chicken pizza in your home"
       },
-    ]);  
-}
+]
 
+export default (req, res) => {
+    const productId = req.query.id;
+    const product = products.find(product => product.id === productId);
+  
+    if (!product) {
+      res.status(404).json({ message: 'Product not found' });
+      return;
+    }
+  
+    res.status(200).json(product);
+  }
+  

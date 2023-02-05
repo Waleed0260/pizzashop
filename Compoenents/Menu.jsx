@@ -23,8 +23,8 @@ const Menu = ({data}) => {
             </div>
             </Link>
             <div className={css.pitext}>
-            <h3>{items.name}</h3>
-            <b className={css.bold}><span style={{color: "var(--themeRed)"}}>$</span> {items.price}</b>
+            <h3>{items.title}</h3>
+            {/* <b className={css.bold}><span style={{color: "var(--themeRed)"}}>$</span> {items.price}</b> */}
             </div>
           </div>
       )
