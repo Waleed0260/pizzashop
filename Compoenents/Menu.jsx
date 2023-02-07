@@ -17,7 +17,7 @@ const Menu = ({data}) => {
       {data.map((items)=>{
           return (
           <div className={css.pizza} key={items.id}>
-            <Link href={`/pizza/${items.id}`}>
+            <Link href={`/pizza/`+ items.id}>
             <div className={css.piimg}>
             <img src={items.image} alt="" style={{width:"100%", height: "100%", borderRadius: "30px"}}/>
             </div>
