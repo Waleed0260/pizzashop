@@ -1,0 +1,77 @@
+.single{
+    display: flex;
+    flex-direction: row;
+    margin: 80px;
+}
+
+.sinimg{
+    display: flex;
+    flex: 1;
+    height: 500px;
+    width: 500px;
+    border-radius: 100px;
+}
+
+.sintext{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.sintext>p{
+    color: var(--gray);
+}
+.sintext>b{
+    font-size: 30px;
+}
+.sintext>b>span{
+    color: var(--themeRed);
+}
+
+.sizebutton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.9rem;
+}
+.pricebutton{
+    height: 2.5rem;
+    width: 6rem;
+    background: var(--pink);
+    transition: 0.2s;
+    border: 2px solid var(--themeRed);
+    border-radius: 50px;
+    color: var(--themeRed);
+    cursor: pointer;
+}
+.pricebutton:hover{
+    background-color: var(--themeRed);
+    color: white;
+}
+
+
+.quantity{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.quantity>span>*{
+    height: 35px;
+    width: 35px;
+    color: var(--themeRed);
+}
+.quantity>b{
+    font-size: 20px;
+}
+
+.cart{
+    height: 2.5rem;
+    width: 7rem;
+    background-color: var(--themeRed);
+    border: none;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}

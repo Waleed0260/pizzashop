@@ -15,7 +15,6 @@ export default function handler(req, res) {
           "https://propakistani.pk/foodnama/wp-content/uploads/2021/10/pizza-with-salami-and-cheese-on-pizza-box-2021-08-31-21-18-43-utc_1000x628.jpg",
         price: "4",
         desc: "chicken pizza in your home"
-  
       },
       {
         id: "3",
@@ -55,4 +54,7 @@ export default function handler(req, res) {
       },
     ]);  
 }
+
+
+
 
