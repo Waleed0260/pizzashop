@@ -1,0 +1,72 @@
+.container{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 2rem;
+}
+
+.table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1rem;
+}
+s
+
+.tbody>tr>td{
+    text-align: center;
+}
+
+.tbody>tr>:nth-child(2){
+    width: 3%;
+}
+.imageTd>span>img{
+    border-radius: 1rem;
+}
+
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem;
+    height: 16rem;
+    background-color: var(--cartBack);
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+}
+
+.cartdetails{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.cartdetails>div{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.btn:nth-of-type(1){
+    height: 2.5rem;
+    width: 8rem;
+    background: white;
+    border: 2px solid var(--themeRed);
+    border-radius: 50px;
+    color: var(--themeRed);
+    cursor: pointer;
+}
+.btn{
+    height: 2.5rem;
+    width: 6rem;
+    background: var(--themeRed);
+    border: 2px solid var(--themeRed);
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+}

@@ -32,6 +32,7 @@
     justify-content: flex-end;
     gap: 1rem;
     z-index: 99;
+    cursor: pointer;
 }
 .badge{
     position: absolute;
