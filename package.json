@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@iconscout/react-unicons": "^1.1.6",
     "@mantine/core": "^4.2.12",
     "@mantine/hooks": "^4.2.12",
