@@ -3,19 +3,13 @@ import Hero from "../Compoenents/Hero";
 import Layout from "../Compoenents/Layout";
 import Menu from "../Compoenents/Menu";
 import Service from "../Compoenents/Service";
+import { client } from "../lib/client";
 import css from "../styles/Home.module.css"
 
-export const getStaticProps = async()=>{
-  const res = await fetch("http://localhost:8000/products")
-  const data = await res.json();
-  return {
-    props: {
-      data,
-    }
-  }
-}
 
-export default function Home({data}) {
+
+export default function Home({pizzas}) {
+  console.log(pizzas)
   return (
     <Layout>
       <div className={css.container}>
@@ -27,11 +21,23 @@ export default function Home({data}) {
         <main>
           <Hero/>
           <Service/>
-          <Menu data={data}/>
+          <Menu data={pizzas}/>
           
         </main>
       </div>
       </Layout>
       
   );
+}
+
+
+
+export const getServerSideProps = async()=>{
+  const query = '*[_type == "post"]';
+  const pizzas = await client.fetch(query);
+  return {
+    props: {
+      pizzas,
+    }
+  }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import css from "../styles/Menu.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
+import { urlFor } from '../lib/client'
 
 
 
@@ -14,17 +15,18 @@ const Menu = ({data}) => {
             <h1>Make you fall in love</h1>
         </div>
       <div className={css.pizzas}>
-      {data.map((items)=>{
+      {data.map((items, i)=>{
+        const src = urlFor(items.image).url();
           return (
-          <div className={css.pizza} key={items.id}>
-            <Link href={`/pizza/`+ items.id}>
+          <div className={css.pizza} key={i}>
+            <Link href={`/pizza/${items.slug.current}`}>
             <div className={css.piimg}>
-            <img src={items.image} alt="" style={{width:"100%", height: "100%", borderRadius: "30px"}}/>
+            <img loader = {()=> src } src={src} alt="" style={{width:"100%", height: "100%", borderRadius: "30px"}}/>
             </div>
             </Link>
             <div className={css.pitext}>
             <h3>{items.name}</h3>
-            <h3 className={css.bold}><span style={{color: "var(--themeRed)"}}>$</span> {items.price}</h3>
+            <h3 className={css.bold}><span style={{color: "var(--themeRed)"}}>$</span> {items.price[1]}</h3>
             </div>
           </div>
       )

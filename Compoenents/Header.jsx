@@ -9,7 +9,6 @@ import Link from 'next/link'
 
 const Header = () => {
   const state = useStore((state)=> state)
-  console.log(state)
   const items = useStore((state)=> state.cart.pizzas.length);
   return (
     <div className={css.header}>
