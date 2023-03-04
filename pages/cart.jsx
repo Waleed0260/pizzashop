@@ -5,6 +5,7 @@ import Image from "next/Image";
 import { useStore } from "../store/store";
 import toast, { Toaster } from "react-hot-toast";
 import OrderModal from "../Compoenents/OrderModal";
+import { urlFor } from "../lib/client";
 
 
 const cart = () => {
@@ -43,14 +44,15 @@ const cart = () => {
             </tr>
           </thead>
          <tbody className={css.tbody}>
-             {CartData.pizzas.length > 0 && 
+             {CartData.pizzas.length > 0 ?
             CartData.pizzas.map((pizza, i)=>{
+              const src= urlFor(pizza.image).url();
               return(
               <tr key={i}>
                 <td className={css.imageTd}>
                   <Image
-                  loader={()=> pizza.image}
-                  src={pizza.image}
+                  loader={()=> src}
+                  src={src}
                   alt=""
                   objectFit="cover"
                   width={85}
@@ -74,7 +76,7 @@ const cart = () => {
                 <td style={{color: "var(--themeRed)", cursor: "pointer"}} onClick={()=> handleRemove(i)}>X</td>
               </tr>
               )
-            })} 
+            }): "You have not added any item"} 
 
           </tbody>
         </table>

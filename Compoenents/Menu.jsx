@@ -21,7 +21,7 @@ const Menu = ({data}) => {
           <div className={css.pizza} key={i}>
             <Link href={`/pizza/${items.slug.current}`}>
             <div className={css.piimg}>
-            <img loader = {()=> src } src={src} alt="" style={{width:"100%", height: "100%", borderRadius: "30px"}}/>
+            <img src={src} alt="" style={{width:"100%", height: "100%", borderRadius: "30px"}}/>
             </div>
             </Link>
             <div className={css.pitext}>
