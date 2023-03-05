@@ -8,16 +8,17 @@ const OrderModal = ({opened, setOpened, PaymentMethod}) => {
     const theme = useMantineTheme();
     const CartData = useStore((state)=> state.cart);
     const[FormData, setFormData]= useState({})
-
     const total = ()=> CartData.pizzas.reduce((a,b)=> a+b.quantity * b.price, 0)
+
 
     const handleInput = (e)=>{
       setFormData({...FormData, [e.target.name]: e.target.value})
     }
 
-    const handleSubmit = (e)=>{
-      e.preventDefaut();
-      console.log(FormData)
+    const handleSubmit = async(e)=>{
+      e.preventDefault();
+      const id = await createOrder(...FormData, total, PaymentMethod)
+      console.log('Order Placed', id)
     }
 
 
