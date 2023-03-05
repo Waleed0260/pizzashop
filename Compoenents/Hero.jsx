@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
         <div className={css.pizza}>
             <div>
-                <Image loader={()=> p1} src={p1} objectFit="cover" layout='intrinsic'/>
+                <Image src={p1} objectFit="cover" layout='intrinsic'/>
             </div>
             <div className={css.details}>
                 <b>Italian Pizza</b>
