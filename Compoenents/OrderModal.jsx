@@ -4,10 +4,13 @@ import css from "../styles/OrderModal.module.css"
 import { useStore } from '../store/store';
 import { createOrder } from '../lib/orderhandler';
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from 'next/router';
+
 
 const OrderModal = ({opened, setOpened, PaymentMethod}) => {
     const theme = useMantineTheme();
     const CartData = useStore((state)=> state.cart);
+    const router  = useRouter();
     const[FormData, setFormData]= useState({})
     const total = ()=> CartData.pizzas.reduce((a,b)=> a+b.quantity * b.price, 0)
 
@@ -21,10 +24,11 @@ const OrderModal = ({opened, setOpened, PaymentMethod}) => {
       e.preventDefault();
       const id = await createOrder({...FormData, total, PaymentMethod})
       toast.success("Order placed");
-      resetCart();
+      // resetCart();
       {
         typeof window !== 'undefined' && localStorage.setItem('order', id)
       }
+      router .push(`/order/${id}`)
     }
 
 
