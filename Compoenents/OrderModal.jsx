@@ -3,7 +3,6 @@ import { Modal, useMantineTheme } from '@mantine/core';
 import css from "../styles/OrderModal.module.css"
 import { useStore } from '../store/store';
 import { createOrder } from '../lib/orderhandler';
-import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from 'next/router';
 
 
@@ -23,7 +22,6 @@ const OrderModal = ({opened, setOpened, PaymentMethod}) => {
     const handleSubmit = async(e)=>{
       e.preventDefault();
       const id = await createOrder({...FormData, total, PaymentMethod})
-      toast.success("Order placed");
       // resetCart();
       {
         typeof window !== 'undefined' && localStorage.setItem('order', id)
@@ -48,7 +46,6 @@ const OrderModal = ({opened, setOpened, PaymentMethod}) => {
             <b>You will pay <span>$ {total()}</span> on delivery</b>
             <button type="submit" className='btn'>Place holder</button>
         </form>
-        <Toaster/>
     </Modal>
   )
 }
