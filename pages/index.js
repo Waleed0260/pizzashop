@@ -9,6 +9,7 @@ import css from "../styles/Home.module.css"
 
 
 export default function Home({pizzas}) {
+  
   return (
     <Layout>
       <div className={css.container}>
